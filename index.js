@@ -2,7 +2,7 @@ const {
   Server
 } = require('hapi');
 
-const server = new Server({ port: 3000, host: 'localhost' })
+const server = new Server({ port: process.env.PORT || 3000, host: 'localhost' })
 
 const echoHandler = (request) => {
   const {
