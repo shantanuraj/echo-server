@@ -6,15 +6,22 @@ const server = new Server({ port: process.env.PORT || 3000, host: 'localhost' })
 
 const echoHandler = (request) => {
   const {
+    path,
     query,
     headers,
     payload,
   } = request;
 
-  return {
+  const res = {
+    path,
     query,
     headers,
-  }
+    payload,
+  };
+
+  console.log(Date.now(), '\n', res);
+
+  return res;
 };
 
 const echoRoute = {
